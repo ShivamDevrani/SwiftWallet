@@ -58,7 +58,7 @@ export default function Signup(){
             password:password
            }
            
-           const res=await axios.post('http://localhost:3000/user/signup',dataToBeSend);
+           const res=await axios.post('https://swiftwallet-uq9a.onrender.com/user/signup',dataToBeSend);
            await new Promise(res=>setTimeout(res,1000));
            console.log(res.data);
 
