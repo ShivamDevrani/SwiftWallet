@@ -44,7 +44,7 @@ export default function Send() {
                           amount:money
                          }
                          
-                         const res=await axios.post('http://localhost:3000/account/transfer',dataToBeSend,{
+                         const res=await axios.post('https://swiftwallet-uq9a.onrender.com/account/transfer',dataToBeSend,{
                             headers:{
                                 Authorization:`Bearer ${localStorage.getItem('token')}`
                             }

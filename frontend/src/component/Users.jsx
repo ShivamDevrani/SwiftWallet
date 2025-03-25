@@ -22,7 +22,7 @@ export function Users()
             setUser([]);
             return;
           }
-         const res= await axios.get(`http://localhost:3000/user/bulk?filter=${e.target.value}`,{
+         const res= await axios.get(`https://swiftwallet-uq9a.onrender.com/user/bulk?filter=${e.target.value}`,{
           headers:{
             Authorization:`Bearer ${localStorage.getItem('token')}`
           }
