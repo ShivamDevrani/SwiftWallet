@@ -16,7 +16,7 @@ export default function Dashboard()
 
     useEffect(()=>{
         console.log('hiii');
-      axios.get('http://localhost:3000/account/balance',{
+      axios.get('https://swiftwallet-uq9a.onrender.com/account/balance',{
         headers:{
             Authorization:`Bearer ${localStorage.getItem('token')}`
         }
