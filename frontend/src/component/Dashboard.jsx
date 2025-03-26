@@ -13,6 +13,7 @@ export default function Dashboard()
     
     const [balance,setBalance]=useState(10000);
 
+    const [loading,setLoading]=useState(true);
 
     useEffect(()=>{
         console.log('hiii');
@@ -22,14 +23,24 @@ export default function Dashboard()
         }
       })
       .then((res)=>{
+        setIsAccess(true);
           setBalance(res.data.balance);
-          setIsAccess(true);
+         
       })
       .catch((err)=>{
          console.log(err.response.data.message);
          toast.error(err.response.data.message);
       })
+      .finally(()=>{
+        setLoading(false);
+      })
     },[])
+
+    if(loading){
+       return <div>
+        ...Loading
+       </div>
+    }
 
     return <div className='flex items-center justify-center mt-8'>
        {!isAccess? <div>Unauthorised Access <Link className=' ml-2 underline text-blue-500' to={'/signin'} >Go to Signin</Link></div>:
